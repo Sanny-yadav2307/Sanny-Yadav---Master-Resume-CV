@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanny Yadav - Master Resume & CV</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { 
+                background: white !important; 
+                color: #000 !important; 
+                font-size: 10.5pt !important;
+                padding: 0 !important;
+            }
+            .page-container {
+                box-shadow: none !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+            .section-card {
+                break-inside: avoid;
+                border: none !important;
+                box-shadow: none !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .badge {
+                border: 1px solid #cbd5e1 !important;
+                background-color: #f8fafc !important;
+                color: #1e293b !important;
+            }
+            a { text-decoration: none !important; color: #000 !important; }
+        }
+        
+        .skill-tag {
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800 min-h-screen py-6 px-3 sm:px-6">
+
+    <!-- Control Toolbar (Excluded from Print) -->
+    <div class="max-w-5xl mx-auto mb-6 no-print bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Target Perspective:</span>
+            <div class="inline-flex rounded-lg p-1 bg-slate-100 border border-slate-200 text-xs font-medium">
+                <button onclick="setPerspective('all')" id="btn-all" class="px-3 py-1.5 rounded-md bg-brand-600 text-white shadow-sm font-semibold transition">Master View</button>
+                <button onclick="setPerspective('swe')" id="btn-swe" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition">Software Eng.</button>
+                <button onclick="setPerspective('data')" id="btn-data" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition">Data Science & AI</button>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button onclick="window.print()" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition">
+                <i class="fa-solid fa-print"></i>
+                <span>Print / Save PDF</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main CV Container -->
+    <div class="page-container max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200/80 overflow-hidden">
+        
+        <!-- Header Banner -->
+        <header class="bg-slate-900 text-white p-8 sm:p-10 relative overflow-hidden">
+            <!-- Accent Background Decoration -->
+            <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute right-1/3 top-0 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">SANNY YADAV</h1>
+                    <p id="target-title" class="text-brand-100 text-lg sm:text-xl font-medium tracking-wide">
+                        Master of Computer Applications (M.C.A.) Candidate
+                    </p>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-1 flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-brand-500"></i> Ghazipur, Uttar Pradesh, 233226, India
+                    </p>
+                </div>
+
+                <!-- Contact Grid -->
+                <div class="flex flex-col gap-2.5 text-xs sm:text-sm text-slate-300 border-t md:border-t-0 md:border-l border-slate-800 pt-4 md:pt-0 md:pl-8">
+                    <a href="mailto:sannyyadav2307@gmail.com" class="flex items-center gap-3 hover:text-brand-100 transition">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <span>sannyyadav2307@gmail.com</span>
+                    </a>
+                    <a href="tel:+918471061994" class="flex items-center gap-3 hover:text-brand-100 transition">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <span>+91 84710 61994</span>
+                    </a>
+                    <a href="https://linkedin.com/in/sanny-yadav" target="_blank" class="flex items-center gap-3 hover:text-brand-100 transition">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span>linkedin.com/in/sanny-yadav</span>
+                    </a>
+                    <a href="https://github.com/Sanny-yadav2307" target="_blank" class="flex items-center gap-3 hover:text-brand-100 transition">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                        <span>github.com/Sanny-yadav2307</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="p-6 sm:p-8 border-b border-slate-100 bg-slate-50/50">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-user"></i> Professional Profile
+            </h2>
+            <p id="summary-text" class="text-slate-700 leading-relaxed text-sm sm:text-base">
+                Analytical and technical <strong class="text-slate-900 font-semibold">Master of Computer Applications (M.C.A.) candidate</strong> with a strong foundation in <strong class="text-slate-900 font-semibold">Software Engineering, Data Science, and Full-Stack Web Development</strong>. Proficient in Python, Java, SQL, and Machine Learning libraries with hands-on experience in building end-to-end predictive pipelines, automated data workflows, and interactive analytics dashboards. Seeking an entry-level engineering role or internship.
+            </p>
+        </section>
+
+        <!-- Two-Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
+            
+            <!-- Left Column: Skills, Education & Certifications (5 cols) -->
+            <div class="lg:col-span-5 p-6 sm:p-8 space-y-8 bg-slate-50/30">
+                
+                <!-- Technical Skills -->
+                <section class="section-card">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 pb-2 border-b border-slate-200 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-code text-brand-600"></i> Technical Expertise
+                    </h3>
+                    
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div>
+                            <span class="font-bold text-slate-800 block mb-1.5">Languages & Web</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium shadow-2xs">Python</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium shadow-2xs">Java</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium shadow-2xs">C / C++</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium shadow-2xs">SQL</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium shadow-2xs">JavaScript</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium shadow-2xs">HTML5 / CSS3</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="font-bold text-slate-800 block mb-1.5">Data Science & AI</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="badge skill-tag bg-brand-50 border border-brand-200 text-brand-800 px-2.5 py-1 rounded-md font-medium">Machine Learning</span>
+                                <span class="badge skill-tag bg-brand-50 border border-brand-200 text-brand-800 px-2.5 py-1 rounded-md font-medium">NLP</span>
+                                <span class="badge skill-tag bg-brand-50 border border-brand-200 text-brand-800 px-2.5 py-1 rounded-md font-medium">Scikit-Learn</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium">Pandas / NumPy</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium">Power BI</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium">Tableau</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="font-bold text-slate-800 block mb-1.5">CS Fundamentals</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="badge skill-tag bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-md text-slate-800 font-medium">Data Structures & Algorithms</span>
+                                <span class="badge skill-tag bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-md text-slate-800 font-medium">RDBMS (MySQL, PostgreSQL)</span>
+                                <span class="badge skill-tag bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-md text-slate-800 font-medium">OOPs</span>
+                                <span class="badge skill-tag bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-md text-slate-800 font-medium">Operating Systems</span>
+                                <span class="badge skill-tag bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-md text-slate-800 font-medium">Computer Networks</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="font-bold text-slate-800 block mb-1.5">Developer Tools</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium">Git & GitHub</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium">VS Code</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium">Jupyter Notebook</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium">Linux OS</span>
+                                <span class="badge skill-tag bg-white border border-slate-200 px-2.5 py-1 rounded-md text-slate-700 font-medium">LaTeX / Overleaf</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="section-card">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 pb-2 border-b border-slate-200 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-brand-600"></i> Education
+                    </h3>
+                    
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <!-- MCA -->
+                        <div class="relative pl-4 border-l-2 border-brand-500">
+                            <h4 class="font-bold text-slate-900">Master of Computer Applications (M.C.A.)</h4>
+                            <p class="text-slate-600 font-medium text-xs">MMMUT, Gorakhpur</p>
+                            <p class="text-brand-700 font-semibold text-xs mt-0.5">2026 – Present</p>
+                        </div>
+
+                        <!-- BCA -->
+                        <div class="relative pl-4 border-l-2 border-slate-300">
+                            <h4 class="font-bold text-slate-900">Bachelor of Computer Applications (B.C.A.)</h4>
+                            <p class="text-slate-600 font-medium text-xs">KMCL University, Lucknow</p>
+                            <div class="flex justify-between items-center mt-0.5">
+                                <span class="text-slate-500 text-xs">2023 – 2026</span>
+                                <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold px-2 py-0.5 rounded">CGPA: 7.68 / 10</span>
+                            </div>
+                        </div>
+
+                        <!-- Class 12 -->
+                        <div class="relative pl-4 border-l-2 border-slate-200">
+                            <h4 class="font-semibold text-slate-800">Senior Secondary (Class XII - PCM)</h4>
+                            <p class="text-slate-500 text-xs">P. N. Inter College, Mardah | 2022 – 2023</p>
+                            <span class="text-slate-600 font-medium text-xs">Score: 74.80%</span>
+                        </div>
+
+                        <!-- Class 10 -->
+                        <div class="relative pl-4 border-l-2 border-slate-200">
+                            <h4 class="font-semibold text-slate-800">Secondary School (Class X - Science)</h4>
+                            <p class="text-slate-500 text-xs">M. T. Inter College, Mardah | 2020 – 2021</p>
+                            <span class="text-slate-600 font-medium text-xs">Score: 88.67%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications & Awards -->
+                <section class="section-card">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 pb-2 border-b border-slate-200 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-trophy text-brand-600"></i> Honors & Achievements
+                    </h3>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 shadow-2xs">
+                            <div class="flex items-center gap-2 text-amber-600 font-bold text-xs mb-1">
+                                <i class="fa-solid fa-award"></i> Top 5 Rank (4th Place)
+                            </div>
+                            <p class="font-bold text-slate-900">Statistella - NBA Data Analytics</p>
+                            <p class="text-slate-600 text-xs mt-0.5">BASH 8.0, IIT BHU Varanasi. Engineered a comprehensive Power BI dashboard evaluating historical NBA statistics (2003–2021).</p>
+                        </div>
+
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 shadow-2xs">
+                            <p class="font-bold text-slate-900 mb-1">Virtual Job Simulations (Forage, 2025)</p>
+                            <ul class="list-disc list-inside text-slate-600 text-xs space-y-1">
+                                <li><strong>Accenture:</strong> Software Engineering Simulation</li>
+                                <li><strong>TATA & Deloitte:</strong> Data Analytics Simulation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Experience & Projects (7 cols) -->
+            <div class="lg:col-span-7 p-6 sm:p-8 space-y-8 bg-white">
+                
+                <!-- Experience Section -->
+                <section class="section-card">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 pb-2 border-b border-slate-200 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase text-brand-600"></i> Work Experience
+                    </h3>
+
+                    <div class="space-y-6">
+                        <!-- Experience Item 1 -->
+                        <div class="relative pl-6 border-l-2 border-brand-600 group">
+                            <div class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-brand-600 ring-4 ring-white"></div>
+                            <div class="flex flex-wrap justify-between items-baseline gap-2 mb-1">
+                                <h4 class="font-bold text-slate-900 text-base">Python with Data Science Intern</h4>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">Sep 2025 – Feb 2026</span>
+                            </div>
+                            <p class="text-brand-700 font-medium text-xs sm:text-sm mb-2">Analyze Infotech India • Lucknow, UP</p>
+                            <ul class="list-disc list-outside text-slate-600 text-xs sm:text-sm space-y-1.5 ml-4">
+                                <li>Engineered predictive machine learning models and conducted Exploratory Data Analysis (EDA) on multi-dimensional structured datasets using Python and Scikit-learn.</li>
+                                <li>Streamlined data preprocessing pipelines by developing automated cleaning and transformation scripts in Pandas and NumPy, reducing manual preparation time by approximately 35%.</li>
+                                <li>Collaborated with senior data analysts to evaluate performance metrics, ensuring analytical consistency and data integrity prior to reporting.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience Item 2 -->
+                        <div class="relative pl-6 border-l-2 border-slate-300 group">
+                            <div class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-slate-300 group-hover:bg-brand-500 transition ring-4 ring-white"></div>
+                            <div class="flex flex-wrap justify-between items-baseline gap-2 mb-1">
+                                <h4 class="font-bold text-slate-900 text-base">Campus Ambassador Intern</h4>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">Dec 2025 – Feb 2026</span>
+                            </div>
+                            <p class="text-brand-700 font-medium text-xs sm:text-sm mb-2">EDC IIT Delhi • Remote</p>
+                            <ul class="list-disc list-outside text-slate-600 text-xs sm:text-sm space-y-1.5 ml-4">
+                                <li>Managed regional campus outreach strategies, driving student participation across university-led entrepreneurial programs and tech workshops.</li>
+                                <li>Tracked and analyzed engagement metrics across target demographics, increasing outreach efficiency and student conversion by 25%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section class="section-card">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 pb-2 border-b border-slate-200 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-brand-600"></i> Key Technical Projects
+                    </h3>
+
+                    <div class="space-y-6">
+                        <!-- Project 1 -->
+                        <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/80 hover:border-brand-300 transition">
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                                <h4 class="font-bold text-slate-900 text-base">Traffic Accident Analysis & Prediction System</h4>
+                                <span class="text-xs font-mono font-medium px-2 py-0.5 rounded bg-slate-200 text-slate-800">Python • ML • Power BI • SQL</span>
+                            </div>
+                            <ul class="list-disc list-outside text-slate-600 text-xs sm:text-sm space-y-1.5 ml-4">
+                                <li>Built an end-to-end Machine Learning pipeline utilizing regression algorithms to predict multi-year traffic accident patterns and identify high-risk zones across national routes.</li>
+                                <li>Cleaned and transformed large historical accident datasets using SQL and Pandas, eliminating missing values and inconsistent formatting across regional logs.</li>
+                                <li>Designed an interactive <strong class="text-slate-800">Power BI dashboard</strong> visualizing spatial distribution, key risk drivers, and peak incident times to support data-driven safety recommendations.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/80 hover:border-brand-300 transition">
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                                <h4 class="font-bold text-slate-900 text-base">Fake News Detection System</h4>
+                                <span class="text-xs font-mono font-medium px-2 py-0.5 rounded bg-slate-200 text-slate-800">Python • NLP • TF-IDF • Scikit-learn</span>
+                            </div>
+                            <ul class="list-disc list-outside text-slate-600 text-xs sm:text-sm space-y-1.5 ml-4">
+                                <li>Developed a Natural Language Processing (NLP) classification model to identify and flag misleading news articles with an <strong class="text-emerald-700 font-bold">85% classification accuracy</strong>.</li>
+                                <li>Implemented text preprocessing techniques including tokenization, stop-word removal, and TF-IDF feature extraction to optimize input data for classifier training.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Core Strengths / Highlights -->
+                <section class="section-card">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 pb-2 border-b border-slate-200 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-brand-600"></i> Core Competencies
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-medium text-slate-700">
+                        <div class="p-2 bg-slate-100 rounded text-center border border-slate-200">Problem Solving</div>
+                        <div class="p-2 bg-slate-100 rounded text-center border border-slate-200">Data Analytics</div>
+                        <div class="p-2 bg-slate-100 rounded text-center border border-slate-200">Pipeline Automation</div>
+                        <div class="p-2 bg-slate-100 rounded text-center border border-slate-200">Data Visualization</div>
+                        <div class="p-2 bg-slate-100 rounded text-center border border-slate-200">Critical Thinking</div>
+                        <div class="p-2 bg-slate-100 rounded text-center border border-slate-200">Technical Writing</div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 text-slate-400 p-4 text-center text-xs border-t border-slate-800">
+            <p>Sanny Yadav • Master CV • Ready for Software Engineering & Data Analytics Opportunities</p>
+        </footer>
+
+    </div>
+
+    <!-- Script for Perspective Switching -->
+    <script>
+        function setPerspective(type) {
+            const btnAll = document.getElementById('btn-all');
+            const btnSwe = document.getElementById('btn-swe');
+            const btnData = document.getElementById('btn-data');
+            const title = document.getElementById('target-title');
+            const summary = document.getElementById('summary-text');
+
+            // Reset buttons
+            [btnAll, btnSwe, btnData].forEach(b => {
+                b.className = "px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition";
+            });
+
+            if(type === 'swe') {
+                btnSwe.className = "px-3 py-1.5 rounded-md bg-brand-600 text-white shadow-sm font-semibold transition";
+                title.innerText = "Software Engineer / Full-Stack Developer Candidate";
+                summary.innerHTML = "Analytical <strong class='text-slate-900 font-semibold'>M.C.A. candidate</strong> specializing in <strong class='text-slate-900 font-semibold'>Software Development, Java, Python, and Object-Oriented Design</strong>. Experienced in building full-stack web components, optimizing algorithms, and working with modern SQL databases. Seeking an entry-level Software Development Engineer (SDE) position or internship.";
+            } else if(type === 'data') {
+                btnData.className = "px-3 py-1.5 rounded-md bg-brand-600 text-white shadow-sm font-semibold transition";
+                title.innerText = "Data Scientist & Analytics Specialist";
+                summary.innerHTML = "Data-driven <strong class='text-slate-900 font-semibold'>M.C.A. candidate</strong> experienced in <strong class='text-slate-900 font-semibold'>Machine Learning, Predictive Modeling, and SQL Data Engineering</strong>. Proven track record in automated data preprocessing, NLP pipelines, and interactive Power BI dashboard design. Top-5 ranker in national NBA data analytics competition.";
+            } else {
+                btnAll.className = "px-3 py-1.5 rounded-md bg-brand-600 text-white shadow-sm font-semibold transition";
+                title.innerText = "Master of Computer Applications (M.C.A.) Candidate";
+                summary.innerHTML = "Analytical and technical <strong class='text-slate-900 font-semibold'>Master of Computer Applications (M.C.A.) candidate</strong> with a strong foundation in <strong class='text-slate-900 font-semibold'>Software Engineering, Data Science, and Full-Stack Web Development</strong>. Proficient in Python, Java, SQL, and Machine Learning libraries with practical experience in building end-to-end predictive pipelines, automated data workflows, and interactive analytics dashboards. Seeking an entry-level engineering role or internship.";
+            }
+        }
+    </script>
+</body>
+</html>
